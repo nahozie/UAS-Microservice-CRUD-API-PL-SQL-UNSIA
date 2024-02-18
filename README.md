@@ -3,6 +3,8 @@ Kelompok 7
 # nama aplikasi
 Aplikasi Login Employee dan Manajemen User
 
+# Dokumentasi Aplikasi 
+Postman dan SDLC Aplikasi : https://drive.google.com/file/d/1hK67DvXeDZBvEPwvsxYCjeKmm61glK3C/view?usp=drive_link
 # Deskrpsi applikasi
 
 Aplikasi Microservice Login dan Manajemen USER
@@ -20,7 +22,14 @@ Terdapat enam inputan yakni :
 - last_name
 - gender
 - status
-
+## Trigger Log 
+Menyimpan aktivitas dari user berupa Insert, Update, dan Delete 
+class UserActivityLog(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer)
+    activity_type = db.Column(db.String(15))
+    timestamp = db.Column(db.DateTime, default=datetime.datetime.utcnow)
+    
 ## Create User
 CREATE TABLE users (
     user_id INT PRIMARY KEY AUTO_INCREMENT, 
@@ -45,8 +54,9 @@ WHERE
 ## Read User
 SELECT * FROM users;
 
-# Delete User
+## Delete User
 DELETE FROM users WHERE username = 'username_to_delete';
+
 
 
 ## Langkah-Langkah Running Aplikasi
