@@ -5,10 +5,9 @@ Aplikasi Login Employee dan Manajemen User
 
 # Dokumentasi Aplikasi 
 Postman dan SDLC Aplikasi : https://drive.google.com/file/d/1hK67DvXeDZBvEPwvsxYCjeKmm61glK3C/view?usp=drive_link
-# Deskrpsi applikasi
-
+# Deskrpsi Aplikasi
 Aplikasi Microservice Login dan Manajemen USER
-di dalam aplikasi terdapat sistem CRUD / Create, Read, Update, Delete
+di dalam aplikasi terdapat sistem CRUD / Create, Read, Update, Delete dan tambahan Trigger Log
 
 ## Login
 terdapat dua inputan yang dimasukkan yakni :
