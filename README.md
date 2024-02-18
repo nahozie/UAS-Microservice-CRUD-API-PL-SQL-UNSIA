@@ -23,13 +23,15 @@ Terdapat enam inputan yakni :
 - status
 ## Trigger Log 
 Menyimpan aktivitas dari user berupa Insert, Update, dan Delete 
+```bash
 class UserActivityLog(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer)
     activity_type = db.Column(db.String(15))
     timestamp = db.Column(db.DateTime, default=datetime.datetime.utcnow)
-    
+```
 ## Create User
+```bash
 CREATE TABLE users (
     user_id INT PRIMARY KEY AUTO_INCREMENT, 
     username VARCHAR(80) NOT NULL UNIQUE,
@@ -39,8 +41,9 @@ CREATE TABLE users (
     gender CHAR(15), NOT NULL,
     status VARCHAR(15) NOT NULL 
 );
-
+```
 ## Update User
+```bash
 UPDATE users
 SET 
     first_name = 'NewFirstName',
@@ -49,14 +52,15 @@ SET
     status = 'NewStatus'
 WHERE
     username = 'existing_username';
-
+```
 ## Read User
+```bash
 SELECT * FROM users;
-
+```
 ## Delete User
+```bash
 DELETE FROM users WHERE username = 'username_to_delete';
-
-
+```
 
 ## Langkah-Langkah Running Aplikasi
 
