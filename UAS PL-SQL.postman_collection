@@ -1,0 +1,130 @@
+{
+	"info": {
+		"_postman_id": "4584ad77-5982-4738-a348-2c7c97982497",
+		"name": "UTS PL/SQL",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "31561236",
+		"_collection_link": "https://winter-shadow-188690.postman.co/workspace/Team-Workspace~dbb0daaa-f426-4138-8835-819a3251bf4d/collection/31561236-4584ad77-5982-4738-a348-2c7c97982497?action=share&source=collection_link&creator=31561236"
+	},
+	"item": [
+		{
+			"name": "create user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"manyul\",\r\n    \"password\" : \"123\",\r\n    \"first_name\" : \"memet\",\r\n    \"last_name\" : \"suremet\",\r\n    \"gender\" : \"male\",\r\n    \"status\" : \"single\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:5000/user"
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const jsonData = JSON.parse(responseBody);\r",
+							"\r",
+							"postman.setEnvironmentVariable(\"id\", jsonData.id);\r",
+							"postman.setEnvironmentVariable(\"token\", jsonData.token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"manyul\",\r\n    \"password\" : \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:5000/login"
+			},
+			"response": []
+		},
+		{
+			"name": "get all users",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyNX0.9eSFczIa1V6TdbT3C6mvHwj6Ap0QXAkaZjfjxnNTdpk",
+						"type": "text"
+					}
+				],
+				"url": "http://127.0.0.1:5000/users"
+			},
+			"response": []
+		},
+		{
+			"name": "get user by id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyN30.0XOXV_O1F5-dEzHxTOjOVFjPeNXOSeiP_Q6UCSeJc-8",
+						"type": "text"
+					}
+				],
+				"url": "http://127.0.0.1:5000/user/8"
+			},
+			"response": []
+		},
+		{
+			"name": "update with token",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyNX0.9eSFczIa1V6TdbT3C6mvHwj6Ap0QXAkaZjfjxnNTdpk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"first_name\" : \"jarwok\",\r\n    \"last_name\" : \"ozi\",\r\n    \"gender\" : \"laki\",\r\n    \"status\" : \"lajang\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:5000/update_user/25"
+			},
+			"response": []
+		},
+		{
+			"name": "delete with token",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozMH0.VVTdNdcGalreL1Cs9NOSMV7JYDY34ho-iAdekMCaD7I",
+						"type": "text"
+					}
+				],
+				"url": "http://127.0.0.1:5000/delete_user/29"
+			},
+			"response": []
+		}
+	]
+}
