@@ -3,64 +3,18 @@ Kelompok 7
 # nama aplikasi
 Aplikasi Login Employee dan Manajemen User
 
-# Dokumentasi Aplikasi 
-Postman dan SDLC Aplikasi : https://drive.google.com/drive/folders/13VtZcSQUYQsEaj06no_SeJUsvHUrX1Ft?usp=drive_link
 # Deskrpsi Aplikasi
-Aplikasi Microservice Login dan Manajemen USER
-di dalam aplikasi terdapat sistem CRUD / Create, Read, Update, Delete dan tambahan Trigger Log
+Aplikasi Flask ini menyediakan API sederhanan untuk mengelola informasi karyawan / employee, termasuk didalamnya otentikasi pengguna. dalam aplikasi ini menggunakan database PostgreSQL untuk menyimpan data dan SQLAlchemy untuk interaksi dengan database. 
 
-## Login
-terdapat dua inputan yang dimasukkan yakni :
-Username dan Password
-
-## Manajemen User
-Terdapat enam inputan yakni :
-- username
-- password
-- first_name
-- last_name
-- gender
-- status
-## Trigger Log 
-Menyimpan aktivitas dari user berupa Insert, Update, dan Delete 
-```bash
-class UserActivityLog(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer)
-    activity_type = db.Column(db.String(15))
-    timestamp = db.Column(db.DateTime, default=datetime.datetime.utcnow)
-```
-## Create User
-```bash
-CREATE TABLE users (
-    user_id INT PRIMARY KEY AUTO_INCREMENT, 
-    username VARCHAR(80) NOT NULL UNIQUE,
-    password VARCHAR(256) NOT NULL, 
-    first_name VARCHAR(25) NOT NULL,
-    last_name VARCHAR(35) NOT NULL,
-    gender CHAR(15), NOT NULL,
-    status VARCHAR(15) NOT NULL 
-);
-```
-## Update User
-```bash
-UPDATE users
-SET 
-    first_name = 'NewFirstName',
-    last_name = 'NewLastName',
-    gender = 'NewGender',
-    status = 'NewStatus'
-WHERE
-    username = 'existing_username';
-```
-## Read User
-```bash
-SELECT * FROM users;
-```
-## Delete User
-```bash
-DELETE FROM users WHERE username = 'username_to_delete';
-```
+# Persyaratan Aplikasi 
+sebelum menjalankan aplikasi ini, perlu dipastikan anda memiliki hal-hal berikut terinstall 
+- Python 3.11.3
+- PostgreSQL
+- VS Code
+ 
+# Dokumentasi Aplikasi 
+- Dokumentasi dan SDLC     : https://drive.google.com/file/d/1Yv_vI5rPGNnyN-JP8XPU6-w158XQxKxq/view?usp=sharing
+- Postman                  : https://drive.google.com/file/d/1hK67DvXeDZBvEPwvsxYCjeKmm61glK3C/view?usp=drive_link
 
 ## Langkah-Langkah Running Aplikasi
 
@@ -117,3 +71,58 @@ DELETE FROM users WHERE username = 'username_to_delete';
     ```bash
     flask run
     ```
+
+## Login
+terdapat dua inputan yang dimasukkan yakni :
+Username dan Password
+
+## Manajemen User
+Terdapat enam inputan yakni :
+- username
+- password
+- first_name
+- last_name
+- gender
+- status
+## Trigger Log 
+Menyimpan aktivitas dari user berupa Insert, Update, dan Delete 
+```bash
+class UserActivityLog(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer)
+    activity_type = db.Column(db.String(15))
+    timestamp = db.Column(db.DateTime, default=datetime.datetime.utcnow)
+```
+## Create User
+```bash
+CREATE TABLE users (
+    user_id INT PRIMARY KEY AUTO_INCREMENT, 
+    username VARCHAR(80) NOT NULL UNIQUE,
+    password VARCHAR(256) NOT NULL, 
+    first_name VARCHAR(25) NOT NULL,
+    last_name VARCHAR(35) NOT NULL,
+    gender CHAR(15), NOT NULL,
+    status VARCHAR(15) NOT NULL 
+);
+```
+## Update User
+```bash
+UPDATE users
+SET 
+    first_name = 'NewFirstName',
+    last_name = 'NewLastName',
+    gender = 'NewGender',
+    status = 'NewStatus'
+WHERE
+    username = 'existing_username';
+```
+## Read User
+```bash
+SELECT * FROM users;
+```
+## Delete User
+```bash
+DELETE FROM users WHERE username = 'username_to_delete';
+```
+
+
