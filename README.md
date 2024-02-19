@@ -1,7 +1,7 @@
 Kelompok 7
 
 # nama aplikasi
-Aplikasi Login Employee dan Manajemen User
+Aplikasi Microservice Login Employee dan Manajemen User
 
 # Deskrpsi Aplikasi
 Aplikasi Flask ini menyediakan API sederhanan untuk mengelola informasi karyawan / employee, termasuk didalamnya otentikasi pengguna. dalam aplikasi ini menggunakan database PostgreSQL untuk menyimpan data dan SQLAlchemy untuk interaksi dengan database. 
