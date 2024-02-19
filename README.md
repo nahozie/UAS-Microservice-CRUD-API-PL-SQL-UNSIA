@@ -4,10 +4,10 @@ Kelompok 7
 Aplikasi Microservice CRUD Employee dengan Trigger Log
 
 # Deskripsi Aplikasi
-Aplikasi Flask ini menyediakan API sederhanan untuk mengelola informasi karyawan / employee dengan operasi CRUD (Create, Update, Update, Delete), termasuk didalamnya otentikasi pengguna dengan sadi yang terenkripsi. didalam aplikasi ini menggunakan database PostgreSQL untuk menyimpan data dan SQLAlchemy untuk interaksi dengan database. 
+Aplikasi Flask ini menyediakan API sederhanan untuk mengelola informasi karyawan / employee dengan operasi CRUD (Create, Update, Update, Delete), termasuk didalamnya otentikasi pengguna dengan sandi yang terenkripsi. didalam aplikasi ini menggunakan database PostgreSQL untuk menyimpan data dan SQLAlchemy untuk interaksi dengan database. 
 
 # Fitur Aplikasi 
-- Otentikasi pengguna dengan sadi yang terenkripsi
+- Otentikasi pengguna dengan sandi yang terenkripsi
 - fitur logging sebagai riwayat kejadian dalam aplikasi
 - Operasi CRUD Employee
   
