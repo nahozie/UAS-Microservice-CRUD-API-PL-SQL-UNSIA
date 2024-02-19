@@ -1,11 +1,16 @@
 Kelompok 7
 
 # nama aplikasi
-Aplikasi Microservice Login Employee dan Manajemen User
+Aplikasi Microservice CRUD Employee dengan Trigger Log
 
 # Deskrpsi Aplikasi
-Aplikasi Flask ini menyediakan API sederhanan untuk mengelola informasi karyawan / employee, termasuk didalamnya otentikasi pengguna. dalam aplikasi ini menggunakan database PostgreSQL untuk menyimpan data dan SQLAlchemy untuk interaksi dengan database. 
+Aplikasi Flask ini menyediakan API sederhanan untuk mengelola informasi karyawan / employee dengan operasi CRUD (Create, Update, Update, Delete), termasuk didalamnya otentikasi pengguna dengan sadi yang terenkripsi. didalam aplikasi ini menggunakan database PostgreSQL untuk menyimpan data dan SQLAlchemy untuk interaksi dengan database. 
 
+# Fitur Aplikasi 
+- Otentikasi pengguna dengan sadi yang terenkripsi
+- fitur logging sebagai riwayat kejadian dalam aplikasi
+- Operasi CRUD Employee
+- 
 # Persyaratan Aplikasi 
 sebelum menjalankan aplikasi ini, perlu dipastikan anda memiliki hal-hal berikut terinstall 
 - Python 3.11.3
